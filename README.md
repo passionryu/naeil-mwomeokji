@@ -1,12 +1,12 @@
 <div align="center">
 
-<a href="https://passionryu.github.io/naeil-mwomeokji/"><img src="og.png" alt="오늘 뭐 먹지?" width="720"></a>
+<a href="https://passionryu.github.io/oneul-mwomeokji/"><img src="og.png" alt="오늘 뭐 먹지?" width="720"></a>
 
 # 🍽️ 오늘 뭐 먹지?
 
 ### "아무거나"는 이제 그만. 질문 7개, 30초면 오늘 갈 식당이 정해집니다.
 
-<a href="https://passionryu.github.io/naeil-mwomeokji/"><img src="https://img.shields.io/badge/%F0%9F%91%89%20%EC%A7%80%EA%B8%88%20%EB%B0%94%EB%A1%9C%20%ED%95%B4%EB%B3%B4%EA%B8%B0-FF5A1F?style=for-the-badge" alt="지금 바로 해보기" height="44"></a>
+<a href="https://passionryu.github.io/oneul-mwomeokji/"><img src="https://img.shields.io/badge/%F0%9F%91%89%20%EC%A7%80%EA%B8%88%20%EB%B0%94%EB%A1%9C%20%ED%95%B4%EB%B3%B4%EA%B8%B0-FF5A1F?style=for-the-badge" alt="지금 바로 해보기" height="44"></a>
 
 ![질문 7개](https://img.shields.io/badge/질문-7개-FF5A1F?style=flat-square)
 ![소요 시간](https://img.shields.io/badge/소요-30초-FF8A4C?style=flat-square)
@@ -156,7 +156,7 @@
 - **카톡 링크 미리보기**: Open Graph 태그와 전용 썸네일 이미지
 
 ```
-naeil-mwomeokji/
+oneul-mwomeokji/
 ├── index.html   # 화면 · 스타일 · UI 로직
 ├── core.js      # 식당 데이터 · 질문 · 추천 알고리즘 (Node에서도 실행 가능)
 ├── og.png       # 카톡 링크 미리보기 이미지
@@ -208,7 +208,7 @@ naeil-mwomeokji/
 
 ### 🍽️ 오늘 저녁 메뉴, 더 이상 고민하지 마세요.
 
-<a href="https://passionryu.github.io/naeil-mwomeokji/"><img src="https://img.shields.io/badge/%F0%9F%91%89%20%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80%3F%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-FF5A1F?style=for-the-badge" alt="오늘 뭐 먹지? 시작하기" height="44"></a>
+<a href="https://passionryu.github.io/oneul-mwomeokji/"><img src="https://img.shields.io/badge/%F0%9F%91%89%20%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80%3F%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-FF5A1F?style=for-the-badge" alt="오늘 뭐 먹지? 시작하기" height="44"></a>
 
 <sub>Made with 🧡 for 새중앙교회 친구들 · Built with <a href="https://claude.com/claude-code">Claude Code</a></sub>
 
