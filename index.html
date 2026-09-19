@@ -139,6 +139,40 @@
   .banned { color: var(--muted); font-size: 13px; text-align: center; margin: 12px 0 0; }
   .actions { margin-top: 12px; }
 
+  /* 식당 목록 모달 (바텀시트) */
+  .list-btn {
+    align-self: flex-start; margin-top: 20px; display: inline-flex; align-items: center; gap: 6px;
+    min-height: 44px; padding: 0 16px; border-radius: 999px; border: 2px solid var(--line); background: var(--card);
+    font-size: 15px; font-weight: 700; cursor: pointer;
+  }
+  .list-btn:active { transform: scale(.97); }
+  body.locked { overflow: hidden; }
+  .overlay {
+    position: fixed; inset: 0; z-index: 20; background: rgba(20,10,5,.45);
+    display: flex; align-items: flex-end; justify-content: center; animation: fade .2s ease-out;
+  }
+  @keyframes fade { from { opacity: 0; } }
+  .sheet {
+    width: 100%; max-width: 480px; max-height: 88vh; max-height: 88dvh; display: flex; flex-direction: column;
+    background: var(--bg); border-radius: 24px 24px 0 0; animation: up .28s cubic-bezier(.2,.9,.3,1);
+  }
+  @keyframes up { from { transform: translateY(100%); } }
+  .sheet-head { display: flex; align-items: center; padding: 10px 12px 10px 20px; border-bottom: 1px solid var(--line); position: relative; }
+  .sheet-head::before { content: ""; position: absolute; top: 6px; left: 50%; width: 40px; height: 4px; margin-left: -20px; border-radius: 9px; background: var(--line); }
+  .sheet-head h2 { font-size: 19px; margin: 10px 0 0; flex: 1; }
+  .sheet-head .sub { display: block; font-size: 13px; color: var(--muted); font-weight: 500; margin-top: 2px; }
+  .close { width: 44px; height: 44px; border: 0; background: none; font-size: 22px; cursor: pointer; border-radius: 12px; color: var(--muted); }
+  .sheet-body { overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding: 12px 16px max(20px, env(safe-area-inset-bottom)); }
+  .place { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 14px; box-shadow: var(--shadow); }
+  .place + .place { margin-top: 10px; }
+  .place-top { display: flex; align-items: center; gap: 12px; }
+  .place-top .e { font-size: 34px; line-height: 1; }
+  .place-top .n { font-weight: 800; font-size: 17px; }
+  .place-top .k { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .place .menu { font-size: 14px; line-height: 1.5; margin: 10px 0 0; }
+  .place .chips { justify-content: flex-start; margin-top: 10px; }
+  .place .map { display: inline-flex; align-items: center; min-height: 40px; margin-top: 6px; font-size: 14px; font-weight: 700; color: var(--accent); text-decoration: none; }
+
   .toast {
     position: fixed; left: 50%; bottom: max(28px, env(safe-area-inset-bottom)); transform: translate(-50%, 20px);
     background: var(--ink); color: var(--bg); padding: 12px 18px; border-radius: 14px; font-weight: 700; font-size: 15px;
@@ -193,6 +227,7 @@
           <h1>내일<br><em>뭐 먹지?</em></h1>
           <p>질문 7개에 답하면<br>벨포레스퀘어 9곳 중 너한테 딱 맞는 곳을 골라줄게.</p>
           <div class="emoji-row">${RESTAURANTS.map((r, i) => `<span style="animation-delay:${i * 0.15}s">${r.emoji}</span>`).join("")}</div>
+          <button class="list-btn" id="openList" type="button">📋 후보 식당 ${RESTAURANTS.length}곳 보기</button>
         </div>
         <div class="field">
           <label for="name">이름 (단톡방에서 부르는 이름)</label>
@@ -215,6 +250,48 @@
     };
     input.addEventListener("keydown", (e) => { if (e.key === "Enter") begin(); });
     start.addEventListener("click", begin);
+    document.getElementById("openList").addEventListener("click", openList);
+  }
+
+  function openList() {
+    if (document.getElementById("overlay")) return;
+    const el = document.createElement("div");
+    el.className = "overlay";
+    el.id = "overlay";
+    el.innerHTML = `
+      <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+        <div class="sheet-head">
+          <h2 id="sheetTitle">후보 식당 ${RESTAURANTS.length}곳<span class="sub">전부 벨포레스퀘어 일대 · 걸어서 1분 거리</span></h2>
+          <button class="close" id="closeList" aria-label="닫기">✕</button>
+        </div>
+        <div class="sheet-body">
+          ${RESTAURANTS.map((r) => `
+            <div class="place">
+              <div class="place-top">
+                <span class="e">${r.emoji}</span>
+                <div><div class="n">${esc(r.name)}</div><div class="k">${esc(r.kind)}</div></div>
+              </div>
+              <p class="menu">${esc(r.menu)}</p>
+              <div class="chips">
+                <span class="chip ${r.price >= 2 ? "hot" : ""}">${r.price >= 2 ? "💸 " : ""}${PRICE_LABEL[r.price]}</span>
+                <span class="chip">${esc(r.hours)}</span>
+                ${r.warn ? `<span class="chip warn">⚠️ 단체석 확인 필요</span>` : ""}
+              </div>
+              <a class="map" href="${r.url}" target="_blank" rel="noopener">네이버 지도에서 보기 ›</a>
+            </div>`).join("")}
+        </div>
+      </div>`;
+    document.body.appendChild(el);
+    document.body.classList.add("locked");
+    const close = () => {
+      el.remove();
+      document.body.classList.remove("locked");
+      document.removeEventListener("keydown", onKey);
+    };
+    const onKey = (e) => { if (e.key === "Escape") close(); };
+    el.addEventListener("click", (e) => { if (e.target === el) close(); });
+    document.getElementById("closeList").addEventListener("click", close);
+    document.addEventListener("keydown", onKey);
   }
 
   function renderQuestion(i) {

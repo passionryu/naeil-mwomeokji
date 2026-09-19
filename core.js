@@ -6,15 +6,15 @@
 
   // price: 1 = ~1.5만, 2 = ~2.5만, 3 = 3만+
   const RESTAURANTS = [
-    { id: "bentan",   name: "벤탄빌라",          emoji: "🍜", kind: "베트남·태국",   price: 1, hours: "일 11:00–21:00 (LO 20:30)", url: PLACE(1718113572) },
-    { id: "hongkong", name: "홍콩반점",          emoji: "🥟", kind: "중식",         price: 1, hours: "일 10:30–20:30 (LO 20:00)", url: PLACE(1899397279), warn: "단체석 표시 없음 · 8명 가능한지 전화 확인" },
-    { id: "haru",     name: "하루엔소쿠",        emoji: "🍛", kind: "돈카츠·일식",   price: 1, hours: "일 10:00–21:00 (LO 20:20)", url: PLACE(35905708) },
-    { id: "bodram",   name: "보드람치킨",        emoji: "🍗", kind: "치킨",         price: 1, hours: "매일 16:00–01:00",          url: PLACE(2076098783) },
-    { id: "choi",     name: "최대포",            emoji: "🥩", kind: "고기구이",      price: 2, hours: "매일 15:00–23:00",          url: PLACE(21151799) },
-    { id: "pado",     name: "파도초밥",          emoji: "🍣", kind: "초밥",         price: 2, hours: "일 11:00–22:00 (브레이크 15–17시)", url: PLACE(1197859862) },
-    { id: "sinan",    name: "신안수산",          emoji: "🐟", kind: "활어회",        price: 3, hours: "매일 11:00–23:00",          url: PLACE(19048520) },
-    { id: "dakgalbi", name: "홍춘천 치즈닭갈비", emoji: "🧀", kind: "닭갈비",        price: 1, hours: "매일 11:00–23:00",          url: PLACE(1282785816), warn: "단체석 표시 없음 · 8명 가능한지 전화 확인" },
-    { id: "mala",     name: "마라공방",          emoji: "🌶️", kind: "마라탕·샹궈",  price: 1, hours: "일 11:00–21:30 (LO 21:00)", url: PLACE(1349943901), warn: "단체석 표시 없음 · 8명 가능한지 전화 확인" },
+    { id: "bentan",   name: "벤탄빌라",          emoji: "🍜", kind: "베트남·태국",   price: 1, hours: "일 11:00–21:00 (LO 20:30)", menu: "쌀국수 1만 · 팟타이 1.35만 · 똠얌꿍 1.9만", url: PLACE(1718113572) },
+    { id: "hongkong", name: "홍콩반점",          emoji: "🥟", kind: "중식",         price: 1, hours: "일 10:30–20:30 (LO 20:00)", menu: "짜장면 7천 · 짬뽕 9천 · 탕수육 1.68만~", url: PLACE(1899397279), warn: "단체석 표시 없음 · 8명 가능한지 전화 확인" },
+    { id: "haru",     name: "하루엔소쿠",        emoji: "🍛", kind: "돈카츠·일식",   price: 1, hours: "일 10:00–21:00 (LO 20:20)", menu: "로스카츠 1.15만 · 하루카츠 1.25만 · 특로스 1.39만", url: PLACE(35905708) },
+    { id: "bodram",   name: "보드람치킨",        emoji: "🍗", kind: "치킨",         price: 1, hours: "매일 16:00–01:00",          menu: "후라이드 2.2만 · 양념·반반 2.3만 · 떡볶이 1.2만", url: PLACE(2076098783) },
+    { id: "choi",     name: "최대포",            emoji: "🥩", kind: "고기구이",      price: 2, hours: "매일 15:00–23:00",          menu: "갈매기살·항정살 1.6만 · 삼겹살 1.5만 · 모듬 4.2만", url: PLACE(21151799) },
+    { id: "pado",     name: "파도초밥",          emoji: "🍣", kind: "초밥",         price: 2, hours: "일 11:00–22:00 (브레이크 15–17시)", menu: "오늘의 초밥 1.4만 · 코스 2.2만/3.1만 · 우동 7천", url: PLACE(1197859862) },
+    { id: "sinan",    name: "신안수산",          emoji: "🐟", kind: "활어회",        price: 3, hours: "매일 11:00–23:00",          menu: "광어(소) 3.3만 · 광어+우럭 4.5만~ · 모듬회 8만~", url: PLACE(19048520) },
+    { id: "dakgalbi", name: "홍춘천 치즈닭갈비", emoji: "🧀", kind: "닭갈비",        price: 1, hours: "매일 11:00–23:00",          menu: "홍춘천닭갈비 1.2만 · 치즈닭갈비 1.5만 · 볶음밥 2천", url: PLACE(1282785816), warn: "단체석 표시 없음 · 8명 가능한지 전화 확인" },
+    { id: "mala",     name: "마라공방",          emoji: "🌶️", kind: "마라탕·샹궈",  price: 1, hours: "일 11:00–21:30 (LO 21:00)", menu: "마라탕 100g 2천 · 마라샹궈 100g 3.3천 · 꿔바로우 1.3만", url: PLACE(1349943901), warn: "단체석 표시 없음 · 8명 가능한지 전화 확인" },
   ];
 
   const PRICE_LABEL = { 1: "1인 ~1.5만", 2: "1인 ~2.5만", 3: "1인 3만+" };
