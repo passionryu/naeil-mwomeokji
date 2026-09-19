@@ -577,8 +577,11 @@
     function show(n) {
       clearTimeout(timer);
       if (n >= slides.length) return finish();
-      const prev = stage.querySelector(".slide");
-      if (prev) { prev.classList.add("out"); setTimeout(() => prev.remove(), 350); }
+      // 빠르게 탭해도 이전 장들이 겹쳐 남지 않도록 전부 퇴장시킴
+      stage.querySelectorAll(".slide:not(.out)").forEach((prev) => {
+        prev.classList.add("out");
+        setTimeout(() => prev.remove(), 350);
+      });
       idx = n;
       bars.forEach((b, k) => {
         b.className = k < n ? "done" : "";
