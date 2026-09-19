@@ -1,8 +1,8 @@
 <div align="center">
 
-<a href="https://passionryu.github.io/naeil-mwomeokji/"><img src="og.png" alt="내일 뭐 먹지?" width="720"></a>
+<a href="https://passionryu.github.io/naeil-mwomeokji/"><img src="og.png" alt="오늘 뭐 먹지?" width="720"></a>
 
-# 🍽️ 내일 뭐 먹지?
+# 🍽️ 오늘 뭐 먹지?
 
 ### "아무거나"는 이제 그만. 질문 7개, 30초면 오늘 갈 식당이 정해집니다.
 
@@ -20,7 +20,7 @@
 
 ## 😩 이런 단톡방, 익숙하지 않나요?
 
-> **A:** 내일 뭐 먹을래?
+> **A:** 오늘 뭐 먹을래?
 > **B:** 아무거나~
 > **C:** 난 다 좋아
 > **D:** 어제 중식 먹었는데…
@@ -28,7 +28,7 @@
 
 8명이 모이면 메뉴 하나 정하는 데 한참 걸립니다. 누구는 이번 주에 치킨을 두 번 먹었고, 누구는 회를 못 먹고, 누구는 오늘 지갑이 가볍습니다. **이걸 다 기억하고 조율하는 건 주최자 몫**이었죠.
 
-**「내일 뭐 먹지?」는 그 30분을 30초로 줄여 드립니다.**
+**「오늘 뭐 먹지?」는 그 30분을 30초로 줄여 드립니다.**
 
 ---
 
@@ -42,7 +42,7 @@
 
 ---
 
-## 🔥 왜 「내일 뭐 먹지?」인가
+## 🔥 왜 「오늘 뭐 먹지?」인가
 
 | | 기능 | 이게 왜 좋냐면 |
 |:-:|---|---|
@@ -70,9 +70,9 @@
 단톡방은 이런 모습이 됩니다.
 
 ```
-민수: [내일 뭐먹지] 민수 → 1위 최대포 🥩 (2위 홍춘천 치즈닭갈비 · 3위 벤탄빌라) 🚫날것
-지은: [내일 뭐먹지] 지은 → 1위 벤탄빌라 🍜 (2위 하루엔소쿠 · 3위 홍콩반점)
-철수: [내일 뭐먹지] 철수 → 1위 최대포 🥩 (2위 보드람치킨 · 3위 벤탄빌라)
+민수: [오늘 뭐먹지] 민수 → 1위 최대포 🥩 (2위 홍춘천 치즈닭갈비 · 3위 벤탄빌라) 🚫날것
+지은: [오늘 뭐먹지] 지은 → 1위 벤탄빌라 🍜 (2위 하루엔소쿠 · 3위 홍콩반점)
+철수: [오늘 뭐먹지] 철수 → 1위 최대포 🥩 (2위 보드람치킨 · 3위 벤탄빌라)
 ```
 
 ### 🧑‍✈️ 주최자용 결정 공식
@@ -208,7 +208,7 @@ naeil-mwomeokji/
 
 ### 🍽️ 오늘 저녁 메뉴, 더 이상 고민하지 마세요.
 
-<a href="https://passionryu.github.io/naeil-mwomeokji/"><img src="https://img.shields.io/badge/%F0%9F%91%89%20%EB%82%B4%EC%9D%BC%20%EB%AD%90%20%EB%A8%B9%EC%A7%80%3F%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-FF5A1F?style=for-the-badge" alt="내일 뭐 먹지? 시작하기" height="44"></a>
+<a href="https://passionryu.github.io/naeil-mwomeokji/"><img src="https://img.shields.io/badge/%F0%9F%91%89%20%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80%3F%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-FF5A1F?style=for-the-badge" alt="오늘 뭐 먹지? 시작하기" height="44"></a>
 
 <sub>Made with 🧡 for 새중앙교회 친구들 · Built with <a href="https://claude.com/claude-code">Claude Code</a></sub>
 

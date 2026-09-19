@@ -1,4 +1,4 @@
-// 내일 뭐먹지 — 식당 데이터 + 질문 + 추천 로직
+// 오늘 뭐먹지 — 식당 데이터 + 질문 + 추천 로직
 // 브라우저(window.Core)와 Node(시뮬레이션 테스트) 양쪽에서 사용
 
 (function (root) {
@@ -165,7 +165,7 @@
       .filter((o) => o && o.tag)
       .map((o) => `🚫${o.tag}`)
       .join(" ");
-    return `[내일 뭐먹지] ${name} → 1위 ${a.r.name} ${a.r.emoji}${rest ? ` (${rest})` : ""}${tags ? ` ${tags}` : ""}`;
+    return `[오늘 뭐먹지] ${name} → 1위 ${a.r.name} ${a.r.emoji}${rest ? ` (${rest})` : ""}${tags ? ` ${tags}` : ""}`;
   }
 
   const Core = { RESTAURANTS, QUESTIONS, PRICE_LABEL, visibleOptions, recommend, shareText };
