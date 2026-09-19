@@ -44,7 +44,6 @@
   @keyframes in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
   /* 인트로 */
-  .badge { align-self: flex-start; background: var(--soft); color: var(--accent); font-weight: 700; font-size: 13px; padding: 6px 12px; border-radius: 999px; }
   .intro-hero { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 24px 0; }
   .intro-hero h1 { font-size: 44px; line-height: 1.12; margin: 16px 0 12px; letter-spacing: -1.5px; }
   .intro-hero h1 em { font-style: normal; color: var(--accent); }
@@ -59,6 +58,8 @@
   }
   .field input:focus { border-color: var(--accent); }
   .fine { color: var(--muted); font-size: 13px; text-align: center; margin: 12px 0 0; }
+  .intro-actions { margin-top: 16px; }
+  .copyright { color: var(--muted); font-size: 12px; text-align: center; margin: 28px 0 0; padding-top: 16px; border-top: 1px solid var(--line); opacity: .8; }
 
   /* 버튼 */
   .btn {
@@ -196,7 +197,7 @@
 <body>
 <main class="app" id="app"></main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="core.js?v=3"></script>
+<script src="core.js?v=4"></script>
 <script>
 (function () {
   const { RESTAURANTS, QUESTIONS, PRICE_LABEL, visibleOptions, recommend, shareText } = window.Core;
@@ -233,7 +234,6 @@
   function renderIntro() {
     app.innerHTML = `
       <section class="screen">
-        <span class="badge">9/20 (일) · 저녁 5:30~6시</span>
         <div class="intro-hero">
           <h1>내일<br><em>뭐 먹지?</em></h1>
           <p>질문 7개에 답하면<br>벨포레스퀘어 9곳 중 너한테 딱 맞는 곳을 골라줄게.</p>
@@ -244,10 +244,11 @@
           <label for="name">이름 (단톡방에서 부르는 이름)</label>
           <input id="name" maxlength="10" autocomplete="off" placeholder="예: 민수" value="${esc(state.name)}">
         </div>
-        <div class="dock">
+        <div class="intro-actions">
           <button class="btn btn-primary" id="start" ${state.name.trim() ? "" : "disabled"}>시작하기 →</button>
           <p class="fine">30초면 끝 · 결과를 복사해서 단톡방에 올려줘</p>
         </div>
+        <footer class="copyright">© 2026 류성열. All rights reserved.</footer>
       </section>`;
     const input = document.getElementById("name");
     const start = document.getElementById("start");
