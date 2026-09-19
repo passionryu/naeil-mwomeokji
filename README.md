@@ -13,6 +13,15 @@
 ![후보 식당](https://img.shields.io/badge/후보_식당-9곳-2B1D14?style=flat-square)
 ![설치](https://img.shields.io/badge/설치·로그인-필요_없음-1F9D55?style=flat-square)
 ![가격](https://img.shields.io/badge/가격-무료-1F9D55?style=flat-square)
+![모바일 최적화](https://img.shields.io/badge/📱_모바일-최적화-7C3AED?style=flat-square)
+
+<br>
+
+### 🔗 서비스 바로가기
+
+**https://passionryu.github.io/oneul-mwomeokji/**
+
+<sub>📱 <b>휴대폰으로 열어 주세요!</b> 카톡 링크를 누르면 바로 열리도록 모바일 화면에 맞춰 만들었습니다. PC에서도 열리지만 폰 화면이 가장 예쁩니다.</sub>
 
 </div>
 
@@ -35,9 +44,9 @@
 ## ✨ 한눈에 보기
 
 <div align="center">
-<img src="docs/screens.png" alt="시작 화면 · 후보 식당 목록 · 질문 화면 · 결과 화면" width="100%">
+<img src="docs/screens.png" alt="오프닝 · 시작 화면 · 후보 식당 목록 · 질문 화면 · 결과 화면" width="100%">
 <br>
-<sub>시작 화면 → 후보 식당 목록 → 질문 → 나만의 추천 결과</sub>
+<sub>오프닝 안내 → 시작 화면 → 후보 식당 목록 → 질문 → 나만의 추천 결과</sub>
 </div>
 
 ---
@@ -46,13 +55,14 @@
 
 | | 기능 | 이게 왜 좋냐면 |
 |:-:|---|---|
+| 🎬 | **17초 오프닝 안내** | 링크를 열면 스토리처럼 휙휙 넘어가는 애니메이션이 서비스를 소개합니다. 급하면 건너뛰기 한 번! |
 | 🔁 | **이번 주 메뉴 중복 방지** | 월요일에 짬뽕, 수요일에 짜장을 먹은 친구에게 또 중식을 권하지 않습니다 |
 | 🚫 | **못 먹는 음식은 자동 제외** | 날것을 못 먹는 친구가 한 명이라도 있으면 초밥·회는 후보에서 바로 빠집니다 |
 | 💸 | **예산 맞춤** | "오늘은 1.5만 원 이하"라고 하면 비싼 곳은 뒤로 밀립니다 |
 | 🧠 | **이유까지 설명** | "이번 주에 안 먹은 메뉴 ✓ 지글지글 구이가 당긴다며 ✓"처럼 왜 추천했는지 알려줍니다 |
 | 📋 | **카톡 복사 한 번** | 결과가 한 줄 메시지로 정리돼서 단톡방에 바로 붙여넣으면 끝 |
 | 🗺️ | **네이버 지도 바로가기** | 추천받은 식당의 메뉴, 사진, 길찾기를 한 번에 확인 |
-| 📱 | **폰에 최적화** | 카톡 인앱 브라우저에서 바로 열리고, 다크모드도 지원합니다 |
+| 📱 | **모바일 최적화** | 폰 화면 기준으로 설계했습니다. 카톡 인앱 브라우저에서 바로 열리고, 한 손 엄지로 누르기 편한 큰 버튼, 다크모드까지 지원합니다 |
 | 🔒 | **개인정보 수집 없음** | 서버도 DB도 없습니다. 답변은 친구 폰 밖으로 나가지 않습니다 |
 
 ---
@@ -209,6 +219,8 @@ oneul-mwomeokji/
 ### 🍽️ 오늘 저녁 메뉴, 더 이상 고민하지 마세요.
 
 <a href="https://passionryu.github.io/oneul-mwomeokji/"><img src="https://img.shields.io/badge/%F0%9F%91%89%20%EC%98%A4%EB%8A%98%20%EB%AD%90%20%EB%A8%B9%EC%A7%80%3F%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-FF5A1F?style=for-the-badge" alt="오늘 뭐 먹지? 시작하기" height="44"></a>
+
+🔗 https://passionryu.github.io/oneul-mwomeokji/ · 📱 모바일 최적화
 
 <sub>Made with 🧡 for 새중앙교회 친구들 · Built with <a href="https://claude.com/claude-code">Claude Code</a></sub>
 
