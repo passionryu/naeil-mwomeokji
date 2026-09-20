@@ -37,7 +37,7 @@
         { id: "sashimi",  label: "회",               emoji: "🐟", score: { pado: -2 } },
         { id: "dakgalbi", label: "닭갈비",           emoji: "🧀", score: { dakgalbi: -4, bodram: -1 } },
         { id: "mala",     label: "마라탕",           emoji: "🌶️", score: { mala: -4, hongkong: -1 } },
-        { id: "etc",      label: "기타 (목록에 없는 메뉴)", emoji: "🍽️" },
+        { id: "etc",      label: "기타", emoji: "🍽️" },
         { id: "none",     label: "딱히 없음 / 기억 안 남", emoji: "🤷", exclusive: true },
       ],
     },
