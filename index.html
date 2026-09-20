@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>오늘 뭐 먹지? 🍽️</title>
-<meta name="description" content="질문 7개에 답하면 벨포레스퀘어 9곳 중 너한테 딱 맞는 식당을 골라줄게">
+<meta name="description" content="질문 7개에 답하면 벨포레스퀘어 8곳 중 너한테 딱 맞는 식당을 골라줄게">
 <meta property="og:type" content="website">
 <meta property="og:title" content="오늘 뭐 먹지? 🍽️">
 <meta property="og:description" content="질문 7개, 30초! 너한테 딱 맞는 식당을 골라줄게">
-<meta property="og:image" content="https://passionryu.github.io/oneul-mwomeokji/og.png?v=2">
+<meta property="og:image" content="https://passionryu.github.io/oneul-mwomeokji/og.png?v=3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://passionryu.github.io/oneul-mwomeokji/">
@@ -280,7 +280,7 @@
 <body>
 <main class="app" id="app"></main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="core.js?v=5"></script>
+<script src="core.js?v=6"></script>
 <script>
 (function () {
   const { RESTAURANTS, QUESTIONS, PRICE_LABEL, visibleOptions, recommend, shareText } = window.Core;
@@ -319,7 +319,7 @@
       <section class="screen">
         <div class="intro-hero">
           <h1>오늘<br><em>뭐 먹지?</em></h1>
-          <p>질문 7개에 답하면<br>벨포레스퀘어 9곳 중 너한테 딱 맞는 곳을 골라줄게.</p>
+          <p>질문 7개에 답하면<br>벨포레스퀘어 ${RESTAURANTS.length}곳 중 너한테 딱 맞는 곳을 골라줄게.</p>
           <div class="emoji-row">${RESTAURANTS.map((r, i) => `<span style="animation-delay:${i * 0.15}s">${r.emoji}</span>`).join("")}</div>
           <button class="list-btn" id="openList" type="button">📋 후보 식당 ${RESTAURANTS.length}곳 보기</button>
         </div>
@@ -453,7 +453,7 @@
   }
 
   function renderLoading() {
-    app.innerHTML = `<section class="screen loading"><div class="slot" id="slot">🍽️</div><p>9곳 비교하는 중…</p></section>`;
+    app.innerHTML = `<section class="screen loading"><div class="slot" id="slot">🍽️</div><p>${RESTAURANTS.length}곳 비교하는 중…</p></section>`;
     const slot = document.getElementById("slot");
     let k = 0;
     const t = setInterval(() => { slot.textContent = RESTAURANTS[k++ % RESTAURANTS.length].emoji; }, 110);

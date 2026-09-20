@@ -12,7 +12,6 @@
     { id: "bodram",   name: "보드람치킨",        emoji: "🍗", kind: "치킨",         price: 1, hours: "매일 16:00–01:00",          menu: "후라이드 2.2만 · 양념·반반 2.3만 · 떡볶이 1.2만", desc: "얇은 튀김옷에 채소 숙성으로 감칠맛 내는 신상 치킨집. 통다리 메뉴가 있어서 다리 쟁탈 눈치게임은 오늘부로 종료 🍗", url: PLACE(2076098783) },
     { id: "choi",     name: "최대포",            emoji: "🥩", kind: "고기구이",      price: 2, hours: "매일 15:00–23:00",          menu: "갈매기살·항정살 1.6만 · 삼겹살 1.5만 · 모듬 4.2만", desc: "새 건물로 이사 오기 전부터 동네에서 소문난 생고기 맛집. 갈매기살에 막창까지, 고기 굽는 사람만 바쁜 곳 🔥", url: PLACE(21151799) },
     { id: "pado",     name: "파도초밥",          emoji: "🍣", kind: "초밥",         price: 2, hours: "일 11:00–22:00 (브레이크 15–17시)", menu: "오늘의 초밥 1.4만 · 코스 2.2만/3.1만 · 우동 7천", desc: "12피스 코스가 2.2만 원이라 “갓성비 스시”로 통하는 곳. 단체석이 넉넉해서 8명이 우르르 가도 끄떡없음 🍣", url: PLACE(1197859862) },
-    { id: "sinan",    name: "신안수산",          emoji: "🐟", kind: "활어회",        price: 3, hours: "매일 11:00–23:00",          menu: "광어(소) 3.3만 · 광어+우럭 4.5만~ · 모듬회 8만~", desc: "내손동에서 20년째 회 뜨는 터줏대감. 광어·우럭은 기본이고 매운탕으로 마무리하면 오늘 하루 완벽한 엔딩 🌊", url: PLACE(19048520) },
     { id: "dakgalbi", name: "홍춘천 치즈닭갈비", emoji: "🧀", kind: "닭갈비",        price: 1, hours: "매일 11:00–23:00",          menu: "홍춘천닭갈비 1.2만 · 치즈닭갈비 1.5만 · 볶음밥 2천", desc: "치즈가 폭포처럼 쏟아지는 철판 닭갈비. 진짜 메인은 마지막 볶음밥(2천 원)이라는 소문이 있음 🧀", url: PLACE(1282785816), warn: "단체석 표시 없음 · 8명 가능한지 전화 확인" },
     { id: "mala",     name: "마라공방",          emoji: "🌶️", kind: "마라탕·샹궈",  price: 1, hours: "일 11:00–21:30 (LO 21:00)", menu: "마라탕 100g 2천 · 마라샹궈 100g 3.3천 · 꿔바로우 1.3만", desc: "방문자 리뷰 2,400개, 후보 중 인기 1등. 먹고 싶은 재료만 담아 무게로 계산하니까 오늘은 내가 셰프 🌶️", url: PLACE(1349943901), warn: "단체석 표시 없음 · 8명 가능한지 전화 확인" },
   ];
@@ -34,8 +33,8 @@
         { id: "katsu",    label: "돈가스",           emoji: "🍛", score: { haru: -4 } },
         { id: "chicken",  label: "치킨",             emoji: "🍗", score: { bodram: -4, dakgalbi: -1 } },
         { id: "bbq",      label: "고기구이",         emoji: "🥩", score: { choi: -4 } },
-        { id: "sushi",    label: "초밥",             emoji: "🍣", score: { pado: -4, sinan: -1 } },
-        { id: "sashimi",  label: "회",               emoji: "🐟", score: { sinan: -4, pado: -1 } },
+        { id: "sushi",    label: "초밥",             emoji: "🍣", score: { pado: -4 } },
+        { id: "sashimi",  label: "회",               emoji: "🐟", score: { pado: -2 } },
         { id: "dakgalbi", label: "닭갈비",           emoji: "🧀", score: { dakgalbi: -4, bodram: -1 } },
         { id: "mala",     label: "마라탕",           emoji: "🌶️", score: { mala: -4, hongkong: -1 } },
         { id: "none",     label: "딱히 없음 / 기억 안 남", emoji: "🤷", exclusive: true },
@@ -47,7 +46,7 @@
       hint: "여러 개 선택 가능 · 고르면 해당 식당은 빼거나 감점",
       multi: true,
       options: [
-        { id: "raw",   label: "날것 (회·초밥)",  emoji: "🙅", tag: "날것", ban: ["pado", "sinan"] },
+        { id: "raw",   label: "날것 (회·초밥)",  emoji: "🙅", tag: "날것", ban: ["pado"] },
         { id: "spicy", label: "매운 것",         emoji: "🥵", tag: "매운것", ban: ["mala"], score: { dakgalbi: -2, hongkong: -1 } },
         { id: "herb",  label: "고수·향신료",     emoji: "🌿", tag: "향신료", score: { bentan: -3, mala: -2 } },
         { id: "none",  label: "없음! 다 잘 먹어", emoji: "😋", exclusive: true },
@@ -61,7 +60,7 @@
         { id: "grill", label: "지글지글 구이", emoji: "🔥", why: "지글지글 구이가 당긴다며", score: { choi: 3, dakgalbi: 1 } },
         { id: "fried", label: "바삭한 튀김",   emoji: "🍤", why: "바삭한 게 당긴다며",       score: { bodram: 3, haru: 3, hongkong: 1 } },
         { id: "iron",  label: "매콤한 철판",   emoji: "🍳", why: "매콤한 철판이 당긴다며",   score: { dakgalbi: 3, mala: 2, choi: 1 } },
-        { id: "raw",   label: "깔끔한 날것",   emoji: "🧊", why: "깔끔한 날것이 당긴다며",   score: { pado: 3, sinan: 3 }, hideIf: { avoid: "raw" } },
+        { id: "raw",   label: "깔끔한 날것",   emoji: "🧊", why: "깔끔한 날것이 당긴다며",   score: { pado: 3 }, hideIf: { avoid: "raw" } },
       ],
     },
     {
@@ -70,7 +69,7 @@
       options: [
         { id: "light",  label: "가볍게 먹고 싶어", emoji: "🥗", why: "가볍게 먹기 좋은 곳",   score: { bentan: 2, haru: 1, hongkong: 1, pado: 1, mala: 1 } },
         { id: "normal", label: "적당히",           emoji: "🍚" },
-        { id: "heavy",  label: "폭식 모드",        emoji: "🐷", why: "폭식 모드에 딱",        score: { choi: 2, bodram: 2, dakgalbi: 2, sinan: 1 } },
+        { id: "heavy",  label: "폭식 모드",        emoji: "🐷", why: "폭식 모드에 딱",        score: { choi: 2, bodram: 2, dakgalbi: 2 } },
       ],
     },
     {
@@ -79,7 +78,7 @@
       options: [
         { id: "low",  label: "1.5만 원 이하", emoji: "🪙", why: "예산 안에 들어옴", maxPrice: 1, priceScore: { 2: -3, 3: -5 } },
         { id: "mid",  label: "2.5만 원 정도", emoji: "💵", why: "예산 안에 들어옴", maxPrice: 2, priceScore: { 3: -2 } },
-        { id: "any",  label: "오늘은 상관없어", emoji: "💸", why: "오늘은 플렉스 하는 날", score: { sinan: 2, pado: 1, choi: 1 } },
+        { id: "any",  label: "오늘은 상관없어", emoji: "💸", why: "오늘은 플렉스 하는 날", score: { pado: 1, choi: 1 } },
       ],
     },
     {
@@ -87,7 +86,7 @@
       title: "밥 먹고 나서는?",
       options: [
         { id: "fast", label: "빨리 먹고 2차 카페", emoji: "☕", why: "빨리 먹고 일어나기 좋음", score: { hongkong: 2, haru: 2, mala: 2, bentan: 1 } },
-        { id: "long", label: "오래 앉아서 수다",   emoji: "🗣️", why: "오래 앉아 수다 떨기 좋음", score: { choi: 2, sinan: 2, bodram: 2, dakgalbi: 1, pado: 1 } },
+        { id: "long", label: "오래 앉아서 수다",   emoji: "🗣️", why: "오래 앉아 수다 떨기 좋음", score: { choi: 2, bodram: 2, dakgalbi: 1, pado: 1 } },
       ],
     },
     {
@@ -97,7 +96,7 @@
         { id: "fire",  label: "불타오름",      emoji: "🔥", why: "불타는 기분엔 이 맛", score: { mala: 1, dakgalbi: 1, choi: 1 } },
         { id: "calm",  label: "평온함",        emoji: "😌", why: "평온한 날엔 이 맛",   score: { bentan: 1, pado: 1, haru: 1 } },
         { id: "tired", label: "지침",          emoji: "🥶", why: "지친 날엔 이 맛",     score: { hongkong: 1, bentan: 1, bodram: 1 } },
-        { id: "party", label: "축하할 일 있음", emoji: "🎉", why: "축하엔 이 맛",        score: { sinan: 1, choi: 1, pado: 1 } },
+        { id: "party", label: "축하할 일 있음", emoji: "🎉", why: "축하엔 이 맛",        score: { choi: 1, pado: 1 } },
       ],
     },
   ];
